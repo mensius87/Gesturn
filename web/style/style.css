@@ -1,0 +1,166 @@
+#login-body{
+    background-color: dodgerblue;
+}
+
+body{
+   background-color: peachpuff;
+}
+.containerOwnApp {
+    box-shadow: 0 0 27px 0 rgba(84, 84, 84, 0.62);
+    padding-top: 15px;
+    background-color: chocolate;
+ }
+
+ .form-control{
+    margin-bottom: 12px;
+ }
+
+ .login-from-row{
+    background-color:whitesmoke;
+ }
+
+ .login-page {
+   padding: 18% 0 0;
+   margin: 0 auto 100px;
+   max-width: 360px;
+   position: relative;
+ }
+  
+ .login-form {
+    box-shadow: 0 0 27px 0 rgba(84, 84, 84, 0.62);
+    background-color: whitesmoke;
+ }
+  
+ .login-form-header {
+    padding-top: 16px;
+ }
+  
+ .login-from-row {
+    padding-top: 16px;
+    padding-bottom: 16px;
+ }
+  
+ .login-form-font-header {
+    font-size:30px; 
+    font-weight: bold;
+ }
+  
+ .login-form-font-header span {
+    color: #007C9B;
+ }
+
+ .btn-info{
+     background-color: rgb(1, 172, 1);
+ }
+
+ .btn-info:hover{
+    background-color:rgb(1, 116, 1);
+}
+
+nav{
+   position:relative;
+}
+
+.navbar{
+   margin-bottom: 25px;
+}
+
+h4{
+   font-size: unset;;
+}
+
+#iconoCalendario{
+   font-size: xx-large;
+}
+
+#encabezadoTabla{
+   background-color:whitesmoke;
+   text-align: center;
+}
+table.dataTable>thead .sorting:after{
+   display: none;
+}
+
+table.dataTable>thead .sorting:before, table.dataTable>thead .sorting:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before, table.dataTable>thead .sorting_desc_disabled:after{
+   display: none;
+}
+
+#msgConfirmarEliminar{
+   font-size: larger;
+}
+
+table tr:nth-child(odd) td{
+   background-color:#c3e6cb;
+}
+table tr:nth-child(even) td{
+   background-color:#a4ccae;
+}
+
+.datos{
+   background-color: #c3e6cb;
+   border: black 1px solid;
+}
+
+.encabezado{
+   background-color: moccasin;
+   border: black 1px solid;
+   font-weight: bold;
+}
+
+#bodyVerEmpleado{
+   text-align: center;
+}
+
+#tablaDetalleEmpleado{
+   text-align: center;
+}
+
+.letraHistorial{
+   color: black;
+   background-color: wheat;
+}
+
+.list-group-item{
+   background-color: peachpuff;
+   border: 0 !important;
+}
+
+#styleInicioTurno{
+   color: black;
+   height:100%;
+   font-size: x-large;
+   font-weight: bolder;
+}
+
+#styleInicioDescanso{
+   color: black;
+   height:100%;
+   font-size: x-large;
+   font-weight: bolder;
+}
+
+#styleFinDescanso{
+   color: black;
+   height:100%;
+   font-size: x-large;
+   font-weight: bolder;
+}
+
+#styleFinTurno{
+   color: black;
+   height:100%;
+   font-size: x-large;
+   font-weight: bolder;
+}
+
+#errorEmailLogin, #errorPasswordLogin{
+   color: red;
+}
+
+.errorValidacion{
+   color: red;
+}
+
+.correctoValidacion{
+   color:green;
+}
