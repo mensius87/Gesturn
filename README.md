@@ -1,6 +1,4 @@
-# Gesturn
-
-# Control Horario para Empleados
+# Gesturn [Control Horario para Empleados]
 
 ## Descripción
 
