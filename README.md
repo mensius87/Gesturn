@@ -34,7 +34,7 @@ Se trata de una aplicación de control horario que está diseñada para facilita
 
 <p align="center">
   <img src="https://github.com/mensius87/Gesturn/assets/136935764/1b1a7fb3-3a9f-4f93-8033-40603ff8a441" alt="Descripción de la imagen">
-</p>  <br><br>
+</p><br><br>
 
 - `Editar empleado [rol administrador]`
 
@@ -48,6 +48,14 @@ Se trata de una aplicación de control horario que está diseñada para facilita
 <p align="center">
   <img src="https://github.com/mensius87/Gesturn/assets/136935764/bfef08d4-efaa-492e-b443-2e55add55fae" alt="Descripción de la imagen">
 </p><br><br>
+
+
+- `Generar informe [rol administrador]`
+
+<p align="center">
+  <img src="https://github.com/mensius87/Gesturn/assets/136935764/0e07e4e7-2111-4964-b853-7c7c5b0572c3" alt="Descripción de la imagen">
+</p><br><br>
+
 
 - `Fichaje de empleado [rol empleado]`
 
