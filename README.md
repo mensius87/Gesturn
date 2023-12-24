@@ -8,10 +8,10 @@ Este es mi proyecto final del Ciclo Formativo de Grado Superior en Desarrollo de
 
 Se trata de una aplicación de control horario que está diseñada para facilitar el registro preciso de las horas trabajadas por los empleados de una empresa y generar un informe personalizado de estos con su respectivo saldo horario (esta es la opción más potente). La herramienta está diseñada para mejorar la precisión en el registro de las horas laborales, ofreciendo a los empleados y empleadores un seguimiento transparente y eficiente del tiempo trabajado. Existen dos roles:
 
-- ### Empleado:
+- #### Empleado:
     Permite a los empleados marcar su hora de entrada y salida al pueto de trabajo, así como sus descansos dentro de la jornada laboral. Estos registros se guardan en una base de datos para su posterior procesado con el fin de facilitar la gestión del control horario a los administradores.
 
-- ### Administrador:
+- #### Administrador:
     Podrán llevar un control de las horas trabajadas de sus empleados en un rango de fechas seleccionadas y obtener un informe con datos como horas a realizar según contrato, horas trabajadas de más o de menos a fecha actual, etc. Además, podrán gestionar y añadir, consultar, editar y eliminar empleados de la empresa.
 
 <br><br>
