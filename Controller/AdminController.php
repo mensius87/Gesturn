@@ -14,41 +14,42 @@ class AdminController
             die("Connection failed: " . mysqli_connect_error());
          }
 
-         $password = md5($password);
+         $stmt = $cnn->prepare("SELECT Id, Contraseña, Administra, Email FROM EMPLEADO WHERE Email = ?");
+         $stmt->bind_param("s", $email);
+         $stmt->execute();
+         $resultado = $stmt->get_result();
 
-         $query = mysqli_query($cnn, "SELECT Id, Contraseña, Administra, Email from EMPLEADO where Email = '" . $email . "' 
-                                    AND Contraseña = '" . $password . "'");
-
-         $resultado = mysqli_num_rows($query);
-
-         if ($resultado == 1) {
-            $resultado = $query->fetch_array();
-            if ($resultado['Administra'] == 1) {
-               session_start();
-               $_SESSION["Id"] = $resultado['Id'];
-               $_SESSION["Administra"] = $resultado['Administra'];
-               $_SESSION['Administrador'] = $_SESSION["Administra"];
-               unset($_SESSION['Administra']);
-               header("Location: ../web/views/principal_admin.php");
-               exit();
-            } else if ($resultado['Administra'] == 0) {
-               session_start();
-               $_SESSION["Id"] = $resultado['Id'];
-               $_SESSION["Administra"] = $resultado['Administra'];
-               $_SESSION['Administrador'] = $_SESSION["Administra"];
-               unset($_SESSION['Administra']);
-               header("Location: ../web/views/principal_empleado.php");
-               exit();
+         if ($resultado->num_rows == 1) {
+            $fila = $resultado->fetch_assoc();
+            if (password_verify($password, $fila['Contraseña'])) {
+               if ($fila['Administra'] == 1) {
+                  $_SESSION["Id"] = $fila['Id'];
+                  $_SESSION["Administra"] = $fila['Administra'];
+                  $_SESSION['Administrador'] = $_SESSION["Administra"];
+                  unset($_SESSION['Administra']);
+                  header("Location: ../web/views/principal_admin.php");
+                  exit();
+               } else if ($fila['Administra'] == 0) {
+                  $_SESSION["Id"] = $fila['Id'];
+                  $_SESSION["Administra"] = $fila['Administra'];
+                  $_SESSION['Administrador'] = $_SESSION["Administra"];
+                  unset($_SESSION['Administra']);
+                  header("Location: ../web/views/principal_empleado.php");
+                  exit();
+               }
+               $_SESSION["Email"] = $fila['Email'];
+            } else {
+               echo "Usuario o contraseña erróneos";
             }
-            session_start();
-            $_SESSION["Email"] = $resultado['Email'];
          } else {
             echo "Usuario o contraseña erróneos";
          }
 
+         $stmt->close();
          mysqli_close($cnn);
       }
    }
+
    function datosEmpleados()
    {
       $cnn = Conexion::conectar();
@@ -78,30 +79,27 @@ class AdminController
 
    function anadirEmpleado($administra, $nombre, $apellidos, $telefono, $departamentoId, $horasContrato, $email, $contrasena)
    {
-
       $cnn = Conexion::conectar();
 
       if (!$cnn) {
          die("Connection failed: " . mysqli_connect_error());
       }
 
-      $contrasenaCifrada = md5($contrasena);
+      $contrasenaCifrada = password_hash($contrasena, PASSWORD_DEFAULT);
 
-      $sql = "INSERT INTO EMPLEADO(Nombre, Apellidos, Teléfono, horasContrato,
-        Administra, Contraseña, DepartamentoId, Email)
-        VALUES ('$nombre', '$apellidos',
-        '$telefono', '$horasContrato',
-        '$administra', '$contrasenaCifrada', '$departamentoId', '$email')";
+      $stmt = $cnn->prepare("INSERT INTO EMPLEADO(Nombre, Apellidos, Teléfono, horasContrato, Administra, Contraseña, DepartamentoId, Email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt->bind_param("sssiisss", $nombre, $apellidos, $telefono, $horasContrato, $administra, $contrasenaCifrada, $departamentoId, $email);
 
-      if (mysqli_query($cnn, $sql)) {
-         if (mysqli_affected_rows($cnn)) {
+      if ($stmt->execute()) {
+         if ($stmt->affected_rows > 0) {
             echo 1;
          } else {
             echo 0;
          }
       } else {
-         echo "Error: " . $sql . "<br>" . mysqli_error($cnn);
+         echo "Error: " . $stmt->error;
       }
+      $stmt->close();
       mysqli_close($cnn);
    }
 
@@ -179,11 +177,11 @@ class AdminController
       if (!$cnn) {
          die("Connection failed: " . mysqli_connect_error());
       }
-      $contranaCifrada = md5($contrasena);
+      $contrasenaCifrada = password_hash($contrasena, PASSWORD_DEFAULT);
 
       $sql = "UPDATE empleado SET Nombre='$nombre', Apellidos='$apellidos',
         Teléfono='$telefono', Email='$email', HorasContrato='$horasContrato',
-        Administra='$administra', Contraseña='$contranaCifrada',
+        Administra='$administra', Contraseña='$contrasenaCifrada',
         DepartamentoId='$departamentoId' WHERE Id = '$id'";
 
       if (mysqli_query($cnn, $sql)) {
@@ -200,26 +198,26 @@ class AdminController
 
    function borrarEmpleado($id)
    {
-
       $cnn = Conexion::conectar();
 
       if (!$cnn) {
          die("Connection failed: " . mysqli_connect_error());
       }
 
-      $sql = "DELETE FROM empleado WHERE Id='$id'";
+      $stmt = $cnn->prepare("DELETE FROM empleado WHERE Id = ?");
+      $stmt->bind_param("i", $id);
 
-      if (mysqli_query($cnn, $sql)) {
-         if (mysqli_affected_rows($cnn)) {
+      if ($stmt->execute()) {
+         if ($stmt->affected_rows > 0) {
             echo 1;
          } else {
             echo 0;
          }
       } else {
-
-         die();
+         echo "Error: " . $stmt->error;
       }
 
+      $stmt->close();
       mysqli_close($cnn);
    }
 }

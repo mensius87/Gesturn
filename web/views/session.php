@@ -4,7 +4,7 @@ if (!isset($_SESSION['Id'])) {
    header("Location: ../../index.php");
    exit();
 }
-// si algo falla borrar siguiente línea y sus retoques
+
 $IdSesion;
 $IdSesion = $_SESSION['Id'];
 
