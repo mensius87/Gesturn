@@ -2,8 +2,13 @@
 
 ## Descripción
 
-Esta aplicación de control horario está diseñada para facilitar el registro preciso de las horas trabajadas por los empleados de una empresa. Permite a los empleados marcar su entrada y salida, así como gestionar sus horas de trabajo de manera eficiente. Los administradores podrán llevar un control de las horas trabajadas de sus empleados y
-obtener un informe con datos como horase en contrato, horas trabajadas de más o de menos a fecha actual, etc.
+Esta aplicación de control horario está diseñada para facilitar el registro preciso de las horas trabajadas por los empleados de una empresa. Existen dos roles:
+
+Empleados
+Permite a los empleados marcar su entrada y salida, así como gestionar sus horas de trabajo de manera eficiente. 
+
+Administradores
+Podrán llevar un control de las horas trabajadas de sus empleados y obtener un informe con datos como horase en contrato, horas trabajadas de más o de menos a fecha actual, etc.
 
 La aplicación ofrece las siguientes características:
 
