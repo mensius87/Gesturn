@@ -1,7 +1,7 @@
 <h1 align="center">Gesturn [Control Horario para Empleados]</h1><br>
 
 <p align="center">
-  <img src="https://github.com/mensius87/Gesturn/assets/136935764/c83457ce-8b1e-43c3-b8b6-e90655f8ba90" alt="Descripción de la imagen">
+  <img src="https://github.com/mensius87/Gesturn/assets/136935764/c83457ce-8b1e-43c3-b8b6-e90655f8ba90" width="131" height="113" alt="logo gesturn">
 </p>
 
 Este es mi proyecto final del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web.
