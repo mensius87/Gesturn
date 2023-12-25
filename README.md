@@ -57,7 +57,7 @@ Se trata de una aplicación de control horario que está diseñada para facilita
 </p><br><br>
 
 
-- `Fichaje de empleado [rol empleado]`
+- `Fichaje de empleado [rol empleado]` (haz clic en la imagen para verlo con mayor detalle)
 
 <p align="center">
   <img src="https://github.com/mensius87/Gesturn/assets/136935764/528b712a-1237-4614-b96d-0566fb08d512" alt="Descripción de la imagen">
