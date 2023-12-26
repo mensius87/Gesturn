@@ -6,7 +6,7 @@
 
 Este es mi proyecto final del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web.
 
-Se trata de una aplicación de control horario que está diseñada para facilitar el registro preciso de las horas trabajadas por los empleados de una empresa y generar un informe personalizado de estos con su respectivo saldo horario (esta es la función más potente). La herramienta está diseñada para mejorar la precisión en el registro de las horas laborales, ofreciendo a los empleados y empleadores un seguimiento transparente y eficiente del tiempo trabajado. Existen dos roles:
+Se trata de una aplicación de control horario en forma de CRUD que está diseñada para facilitar el registro preciso de las horas trabajadas por los empleados de una empresa y generar un informe personalizado de estos con su respectivo saldo horario (esta es la función más potente). La herramienta está diseñada para mejorar la precisión en el registro de las horas laborales, ofreciendo a los empleados y empleadores un seguimiento transparente y eficiente del tiempo trabajado. Existen dos roles:
 
 - #### Empleado:
     Permite a los empleados marcar su hora de entrada y salida al puesto de trabajo, así como sus descansos dentro de la jornada laboral. Estos registros se guardan en una base de datos para su posterior procesado con el fin de facilitar la consulta del tiempo trabajado durante la jornada a los empleados y la gestión del cumplimiento horario a los administradores.
